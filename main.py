@@ -615,7 +615,7 @@ def bridge_event_to_hass(mqttc, topicprefix, data):
 
     type = data.get('type', None)
     if type and type in SKIP_TYPES:
-        logging.debug(f"Device type '{type} is in the SKIP_TYPES list. Not sending event to Home Assistant.")
+        logging.debug(f"Device type '{type}' is in the SKIP_TYPES list. Not sending event to Home Assistant.")
         return
 
     model = sanitize(data["model"])
