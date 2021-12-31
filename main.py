@@ -109,7 +109,7 @@ NAMING_KEYS = ["type", "model", "subtype", "channel", "id"]
 SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
                            "message_type", "exception", "raw_msg"]
 
-SKIP_TYPES = ['TPMS', ]
+MODEL_WHITELIST = ['Ambientweather-F007TH', ]
 
 # Global mapping of rtl_433 field names to Home Assistant metadata.
 # @todo - should probably externalize to a config file
@@ -590,12 +590,11 @@ def bridge_event_to_hass(mqttc, topicprefix, data):
         logging.debug("Model is not defined. Not sending event to Home Assistant.")
         return
 
-    type = data.get('type', None)
-    if type and type in SKIP_TYPES:
-        logging.debug(f"Device type '{type}' is in the SKIP_TYPES list. Not sending event to Home Assistant.")
-        return
-
     model = sanitize(data["model"])
+
+    if model not in MODEL_WHITELIST:
+        logging.debug(f"Model '{model}' is not whitelisted. Not sending event to Home Assistant.")
+        return
 
     skipped_keys = []
     published_keys = []
