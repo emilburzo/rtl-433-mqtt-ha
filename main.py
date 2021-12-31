@@ -4,7 +4,15 @@
 from __future__ import print_function
 from __future__ import with_statement
 
-AP_DESCRIPTION="""
+import argparse
+import json
+import logging
+import os
+import time
+
+import paho.mqtt.client as mqtt
+
+AP_DESCRIPTION = """
 Publish Home Assistant MQTT auto discovery topics for rtl_433 devices.
 
 rtl_433_mqtt_hass.py connects to MQTT and subscribes to the rtl_433
@@ -17,7 +25,7 @@ what MQTT topics to subscribe to in order to receive the data published
 as device topics by MQTT.
 """
 
-AP_EPILOG="""
+AP_EPILOG = """
 It is strongly recommended to run rtl_433 with "-C si" and "-M newmodel".
 This script requires rtl_433 to publish both event messages and device
 messages.
@@ -91,29 +99,15 @@ There is a single global set of field mappings to Home Assistant meta data.
 
 """
 
-
-
-# import daemon
-
-
-import os
-import argparse
-import logging
-import time
-import json
-import paho.mqtt.client as mqtt
-
-
 discovery_timeouts = {}
 
 # Fields used for creating topic names
-NAMING_KEYS = [ "type", "model", "subtype", "channel", "id" ]
+NAMING_KEYS = ["type", "model", "subtype", "channel", "id"]
 
 # Fields that get ignored when publishing to Home Assistant
 # (reduces noise to help spot missing field mappings)
-SKIP_KEYS = NAMING_KEYS + [ "time", "mic", "mod", "freq", "sequence_num",
-                            "message_type", "exception", "raw_msg" ]
-
+SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
+                           "message_type", "exception", "raw_msg"]
 
 # Global mapping of rtl_433 field names to Home Assistant metadata.
 # @todo - should probably externalize to a config file
@@ -292,7 +286,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
-  
+
     "wind_max_km_h": {
         "device_type": "sensor",
         "object_suffix": "GS",
@@ -557,6 +551,7 @@ def sanitize(text):
             .replace(".", "_")
             .replace("&", ""))
 
+
 def rtl_433_device_topic(data):
     """Return rtl_433 device topic to subscribe to for a data element"""
 
@@ -578,7 +573,7 @@ def publish_config(mqttc, topic, model, instance, mapping):
     device_type = mapping["device_type"]
     object_suffix = mapping["object_suffix"]
     object_id = instance_no_slash
-    object_name = "-".join([object_id,object_suffix])
+    object_name = "-".join([object_id, object_suffix])
 
     path = "/".join([args.discovery_prefix, device_type, object_id, object_name, "config"])
 
@@ -595,7 +590,7 @@ def publish_config(mqttc, topic, model, instance, mapping):
     config["name"] = object_name
     config["state_topic"] = topic
     config["unique_id"] = object_name
-    config["device"] = { "identifiers": object_id, "name": object_id, "model": model, "manufacturer": "rtl_433" }
+    config["device"] = {"identifiers": object_id, "name": object_id, "model": model, "manufacturer": "rtl_433"}
 
     if args.force_update:
         config["force_update"] = "true"
@@ -605,6 +600,7 @@ def publish_config(mqttc, topic, model, instance, mapping):
     mqttc.publish(path, json.dumps(config), retain=args.retain)
 
     return True
+
 
 def bridge_event_to_hass(mqttc, topicprefix, data):
     """Translate some rtl_433 sensor data to Home Assistant auto discovery."""
@@ -629,7 +625,7 @@ def bridge_event_to_hass(mqttc, topicprefix, data):
     for key in data.keys():
         if key in mappings:
             # topic = "/".join([topicprefix,"devices",model,instance,key])
-            topic = "/".join([topicprefix,"devices",instance,key])
+            topic = "/".join([topicprefix, "devices", instance, key])
             if publish_config(mqttc, topic, model, instance, mappings[key]):
                 published_keys.append(key)
         else:
