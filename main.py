@@ -662,11 +662,6 @@ def rtl_433_bridge():
 
 def run():
     """Run main or daemon."""
-    # with daemon.DaemonContext(files_preserve=[sock]):
-    #  detach_process=True
-    #  uid
-    #  gid
-    #  working_directory
     rtl_433_bridge()
 
 
