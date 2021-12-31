@@ -160,14 +160,14 @@ mappings = {
     },
 
     "battery_ok": {
-        "device_type": "sensor",
+        "device_type": "binary_sensor",
         "object_suffix": "B",
         "config": {
             "device_class": "battery",
             "name": "Battery",
-            "unit_of_measurement": "%",
-            "value_template": "{{ float(value) * 99 + 1 }}",
-            "state_class": "measurement"
+            "payload_on": "1",
+            "payload_off": "0",
+            "value_template": "{{ value }}",
         }
     },
 
