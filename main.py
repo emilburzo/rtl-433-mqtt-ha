@@ -577,10 +577,6 @@ def publish_config(mqttc, topic, model, instance, mapping):
     object_id = instance_no_slash
     object_name = "-".join([object_id, object_suffix])
 
-    if device_type in SKIP_TYPES:
-        logging.debug(f"Device type '{device_type} is in the SKIP_TYPES list. Not sending event to Home Assistant.")
-        return
-
     path = "/".join([args.discovery_prefix, device_type, object_id, object_name, "config"])
 
     # check timeout
@@ -615,6 +611,11 @@ def bridge_event_to_hass(mqttc, topicprefix, data):
     if "model" not in data:
         # not a device event
         logging.debug("Model is not defined. Not sending event to Home Assistant.")
+        return
+
+    type = data.get('type', None)
+    if type and type in SKIP_TYPES:
+        logging.debug(f"Device type '{type} is in the SKIP_TYPES list. Not sending event to Home Assistant.")
         return
 
     model = sanitize(data["model"])
