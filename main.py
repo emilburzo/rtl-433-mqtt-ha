@@ -605,6 +605,7 @@ def publish_config(mqttc, topic, model, instance, mapping):
 def bridge_event_to_hass(mqttc, topicprefix, data):
     """Translate some rtl_433 sensor data to Home Assistant auto discovery."""
 
+    logging.debug(f"received: {data}")
     if "model" not in data:
         # not a device event
         logging.debug("Model is not defined. Not sending event to Home Assistant.")
