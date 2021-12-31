@@ -107,7 +107,7 @@ NAMING_KEYS = ["type", "model", "subtype", "channel", "id"]
 # Fields that get ignored when publishing to Home Assistant
 # (reduces noise to help spot missing field mappings)
 SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
-                           "message_type", "exception", "raw_msg"]
+                           "message_type", "exception", "raw_msg", "noise", "snr"]
 
 SKIP_MODELS = ['Schrader', ]
 
