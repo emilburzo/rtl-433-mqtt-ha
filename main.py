@@ -116,7 +116,7 @@ SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
 mappings = {
     "temperature_C": {
         "device_type": "sensor",
-        "object_suffix": "T",
+        "object_suffix": "temp",
         "config": {
             "device_class": "temperature",
             "name": "Temperature",
@@ -161,7 +161,7 @@ mappings = {
 
     "battery_ok": {
         "device_type": "binary_sensor",
-        "object_suffix": "B",
+        "object_suffix": "batt",
         "config": {
             "device_class": "battery",
             "name": "Battery",
@@ -173,7 +173,7 @@ mappings = {
 
     "humidity": {
         "device_type": "sensor",
-        "object_suffix": "H",
+        "object_suffix": "hum",
         "config": {
             "device_class": "humidity",
             "name": "Humidity",
