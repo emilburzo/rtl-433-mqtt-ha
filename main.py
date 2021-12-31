@@ -107,7 +107,7 @@ NAMING_KEYS = ["type", "model", "subtype", "channel", "id"]
 # Fields that get ignored when publishing to Home Assistant
 # (reduces noise to help spot missing field mappings)
 SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
-                           "message_type", "exception", "raw_msg", "noise", "snr"]
+                           "message_type", "exception", "raw_msg"]
 
 SKIP_TYPES = ['TPMS', ]
 
@@ -409,29 +409,6 @@ mappings = {
             "state_class": "measurement"
         }
     },
-
-    "snr": {
-        "device_type": "sensor",
-        "object_suffix": "snr",
-        "config": {
-            "device_class": "signal_strength",
-            "unit_of_measurement": "dB",
-            "value_template": "{{ value|float|round(2) }}",
-            "state_class": "measurement"
-        }
-    },
-
-    "noise": {
-        "device_type": "sensor",
-        "object_suffix": "noise",
-        "config": {
-            "device_class": "signal_strength",
-            "unit_of_measurement": "dB",
-            "value_template": "{{ value|float|round(2) }}",
-            "state_class": "measurement"
-        }
-    },
-
     "depth_cm": {
         "device_type": "sensor",
         "object_suffix": "D",
