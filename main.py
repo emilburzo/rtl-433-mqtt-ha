@@ -165,8 +165,8 @@ mappings = {
         "config": {
             "device_class": "battery",
             "name": "Battery",
-            "payload_on": "1",
-            "payload_off": "0",
+            "payload_on": "0",
+            "payload_off": "1",
             "value_template": "{{ value }}",
         }
     },
