@@ -109,6 +109,8 @@ NAMING_KEYS = ["type", "model", "subtype", "channel", "id"]
 SKIP_KEYS = NAMING_KEYS + ["time", "mic", "mod", "freq", "sequence_num",
                            "message_type", "exception", "raw_msg"]
 
+SKIP_MODELS = ['Schrader', ]
+
 # Global mapping of rtl_433 field names to Home Assistant metadata.
 # @todo - should probably externalize to a config file
 # @todo - Model specific definitions might be needed
@@ -612,6 +614,10 @@ def bridge_event_to_hass(mqttc, topicprefix, data):
         return
 
     model = sanitize(data["model"])
+
+    if model in SKIP_MODELS:
+        logging.debug(f"Model '{model} is in the SKIP_MODELS list. Not sending event to Home Assistant.")
+        return
 
     skipped_keys = []
     published_keys = []
