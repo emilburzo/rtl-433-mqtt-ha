@@ -124,7 +124,9 @@ mappings = {
             "name": "Temperature",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float|round(2) }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
     "temperature_1_C": {
@@ -135,7 +137,9 @@ mappings = {
             "name": "Temperature 1",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
     "temperature_2_C": {
@@ -146,7 +150,9 @@ mappings = {
             "name": "Temperature 2",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
     "temperature_F": {
@@ -157,7 +163,9 @@ mappings = {
             "name": "Temperature",
             "unit_of_measurement": "°F",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -170,6 +178,8 @@ mappings = {
             "payload_on": "0",
             "payload_off": "1",
             "value_template": "{{ value }}",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -181,7 +191,9 @@ mappings = {
             "name": "Humidity",
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -193,7 +205,9 @@ mappings = {
             "name": "Moisture",
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -205,7 +219,9 @@ mappings = {
             "name": "Pressure",
             "unit_of_measurement": "hPa",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -217,7 +233,9 @@ mappings = {
             "name": "Pressure",
             "unit_of_measurement": "kPa",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -228,7 +246,9 @@ mappings = {
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -240,7 +260,9 @@ mappings = {
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -252,7 +274,9 @@ mappings = {
             "name": "Wind Speed",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -263,7 +287,9 @@ mappings = {
             "name": "Wind Average",
             "unit_of_measurement": "km/h",
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -274,7 +300,9 @@ mappings = {
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ float(value|float) * 3.6 }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -285,7 +313,9 @@ mappings = {
             "name": "Gust Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -296,7 +326,9 @@ mappings = {
             "name": "Wind max speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -307,7 +339,9 @@ mappings = {
             "name": "Wind max",
             "unit_of_measurement": "km/h",
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -318,7 +352,9 @@ mappings = {
             "name": "Gust Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ float(value|float) * 3.6 }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -329,7 +365,9 @@ mappings = {
             "name": "Wind Direction",
             "unit_of_measurement": "°",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -340,7 +378,9 @@ mappings = {
             "name": "Rain Total",
             "unit_of_measurement": "mm",
             "value_template": "{{ value|float }}",
-            "state_class": "total_increasing"
+            "state_class": "total_increasing",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -351,7 +391,9 @@ mappings = {
             "name": "Rain Rate",
             "unit_of_measurement": "mm/h",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -362,7 +404,9 @@ mappings = {
             "name": "Rain Total",
             "unit_of_measurement": "mm",
             "value_template": "{{ (float(value|float) * 25.4) | round(2) }}",
-            "state_class": "total_increasing"
+            "state_class": "total_increasing",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -373,7 +417,9 @@ mappings = {
             "name": "Rain Rate",
             "unit_of_measurement": "mm/h",
             "value_template": "{{ (float(value|float) * 25.4) | round(2) }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -384,7 +430,9 @@ mappings = {
             "device_class": "safety",
             "force_update": "true",
             "payload_on": "1",
-            "payload_off": "0"
+            "payload_off": "0",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -395,7 +443,9 @@ mappings = {
             "device_class": "safety",
             "force_update": "true",
             "payload_on": "1",
-            "payload_off": "0"
+            "payload_off": "0",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -406,7 +456,9 @@ mappings = {
             "device_class": "signal_strength",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
     "depth_cm": {
@@ -416,7 +468,9 @@ mappings = {
             "name": "Depth",
             "unit_of_measurement": "cm",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -428,7 +482,9 @@ mappings = {
             "name": "Power",
             "unit_of_measurement": "W",
             "value_template": "{{ value|float }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -440,7 +496,9 @@ mappings = {
             "name": "Outside Luminancee",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -452,7 +510,9 @@ mappings = {
             "name": "UV Index",
             "unit_of_measurement": "UV Index",
             "value_template": "{{ value|int }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -463,7 +523,9 @@ mappings = {
             "name": "Lightning Distance",
             "unit_of_measurement": "mi",
             "value_template": "{{ value|int }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -474,7 +536,9 @@ mappings = {
             "name": "Lightning Distance",
             "unit_of_measurement": "mi",
             "value_template": "{{ value|int }}",
-            "state_class": "measurement"
+            "state_class": "measurement",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 
@@ -484,7 +548,9 @@ mappings = {
         "config": {
             "name": "Lightning Strike Count",
             "value_template": "{{ value|int }}",
-            "state_class": "total_increasing"
+            "state_class": "total_increasing",
+            "force_update": True,
+            "expire_after": 300,
         }
     },
 }
