@@ -126,7 +126,7 @@ mappings = {
             "value_template": "{{ value|float|round(2) }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
     "temperature_1_C": {
@@ -139,7 +139,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
     "temperature_2_C": {
@@ -152,7 +152,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
     "temperature_F": {
@@ -165,7 +165,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -179,7 +179,7 @@ mappings = {
             "payload_off": "1",
             "value_template": "{{ value }}",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -193,7 +193,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -207,7 +207,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -221,7 +221,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -235,7 +235,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -248,7 +248,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -262,7 +262,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -276,7 +276,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -289,7 +289,7 @@ mappings = {
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -302,7 +302,7 @@ mappings = {
             "value_template": "{{ float(value|float) * 3.6 }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -315,7 +315,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -328,7 +328,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -341,7 +341,7 @@ mappings = {
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -354,7 +354,7 @@ mappings = {
             "value_template": "{{ float(value|float) * 3.6 }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -367,7 +367,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -380,7 +380,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "total_increasing",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -393,7 +393,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -406,7 +406,7 @@ mappings = {
             "value_template": "{{ (float(value|float) * 25.4) | round(2) }}",
             "state_class": "total_increasing",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -419,7 +419,7 @@ mappings = {
             "value_template": "{{ (float(value|float) * 25.4) | round(2) }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -432,7 +432,7 @@ mappings = {
             "payload_on": "1",
             "payload_off": "0",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -445,7 +445,7 @@ mappings = {
             "payload_on": "1",
             "payload_off": "0",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -458,7 +458,7 @@ mappings = {
             "value_template": "{{ value|float|round(2) }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
     "depth_cm": {
@@ -470,7 +470,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -484,7 +484,7 @@ mappings = {
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -498,7 +498,7 @@ mappings = {
             "value_template": "{{ value|int }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -512,7 +512,7 @@ mappings = {
             "value_template": "{{ value|int }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -525,7 +525,7 @@ mappings = {
             "value_template": "{{ value|int }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -538,7 +538,7 @@ mappings = {
             "value_template": "{{ value|int }}",
             "state_class": "measurement",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 
@@ -550,7 +550,7 @@ mappings = {
             "value_template": "{{ value|int }}",
             "state_class": "total_increasing",
             "force_update": True,
-            "expire_after": 300,
+            "expire_after": 900,
         }
     },
 }
