@@ -600,7 +600,15 @@ def rtl_433_device_topic(data):
 
     path_elements = []
 
-    for key in NAMING_KEYS:
+    # todo something nicer
+    model = data.get('model', None)
+    if model and model == 'Ambientweather-F007TH':
+        naming_keys = NAMING_KEYS.copy()
+        naming_keys.remove('id')
+    else:
+        naming_keys = NAMING_KEYS
+
+    for key in naming_keys:
         if key in data:
             element = sanitize(str(data[key]))
             path_elements.append(element)
