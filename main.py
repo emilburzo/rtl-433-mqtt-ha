@@ -125,7 +125,6 @@ mappings = {
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float|round(2) }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -138,7 +137,6 @@ mappings = {
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -151,7 +149,6 @@ mappings = {
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -164,7 +161,6 @@ mappings = {
             "unit_of_measurement": "°F",
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -178,7 +174,6 @@ mappings = {
             "payload_on": "0",
             "payload_off": "1",
             "value_template": "{{ value }}",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -192,7 +187,6 @@ mappings = {
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
@@ -206,7 +200,6 @@ mappings = {
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}",
             "state_class": "measurement",
-            "force_update": True,
             "expire_after": 900,
         }
     },
